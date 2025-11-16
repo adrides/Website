@@ -32,7 +32,7 @@ export function FeaturesPage() {
           Todo pensado para planes tranquilos y cuidados.
         </h2>
         <p className="text-rocky-textMuted text-base">
-          heyrocky nace para hacer más fácil organizar paseos y quedadas con tu
+          Rocky nace para hacer más fácil organizar paseos y quedadas con tu
           perro, con toda la información importante visible desde el primer
           momento.
         </p>

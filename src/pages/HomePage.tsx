@@ -14,7 +14,7 @@ export function HomePage() {
         </h1>
 
         <p className="text-rocky-textMuted text-lg max-w-xl">
-          heyrocky conecta a personas con perro para organizar paseos, quedadas y
+          Rocky conecta a personas con perro para organizar paseos, quedadas y
           actividades en entornos seguros y cuidados, con requisitos claros para
           cada plan.
         </p>

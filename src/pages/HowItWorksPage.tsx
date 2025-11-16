@@ -32,7 +32,7 @@ export function HowItWorksPage() {
           Diseñado para organizar planes en minutos, no en horas.
         </h2>
         <p className="text-rocky-textMuted text-base">
-          Desde el primer paso hasta el momento de quedar en el parque, heyrocky
+          Desde el primer paso hasta el momento de quedar en el parque, Rocky
           te acompaña con un flujo sencillo y claro.
         </p>
       </header>

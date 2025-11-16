@@ -1,6 +1,7 @@
 git init
 git add .
-git commit -m "20251116 Rocky dashboard routes photo prod"
+git commit -m "20251116 Rocky website add logo"
 git remote add origin https://github.com/adrides/Website.git
+git remote -v
 git branch -M main
 git push -u origin main
