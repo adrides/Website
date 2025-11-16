@@ -1,6 +1,8 @@
 import type { ReactNode } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { useState } from "react";
+import Rocky1 from "../assets/Rocky1.png";
+import Rocky2 from "../assets/Rocky2.png";
 
 const baseLink =
   "px-3 py-2 rounded-rockySm text-sm font-medium transition-colors";
@@ -15,6 +17,7 @@ const mobileActive = "bg-rocky-card text-rocky-primary border border-rocky-borde
 
 export function Layout({ children }: { children: ReactNode }) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const logo = Rocky2; // swap to Rocky1 if you prefer the lighter palette
 
   const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
   const closeMobileMenu = () => setIsMobileMenuOpen(false);
@@ -24,7 +27,8 @@ export function Layout({ children }: { children: ReactNode }) {
       {/* NAVBAR */}
       <header className="border-b border-rocky-border bg-rocky-navigator/80 backdrop-blur sticky top-0 z-50">
         <div className="mx-auto max-w-6xl px-rockyLg py-rockySm flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-2">
+          <Link to="/" className="flex items-center gap-3">
+            <img src={logo} alt="heyrocky logo" className="h-8 w-auto select-none" />
             <span className="text-xl font-bold tracking-tight text-rocky-primary">
               hey<strong className="text-rocky-text">rocky</strong>
             </span>
@@ -159,7 +163,7 @@ export function Layout({ children }: { children: ReactNode }) {
       {/* FOOTER */}
       <footer className="border-t border-rocky-border mt-rockyXl bg-rocky-navigator">
         <div className="mx-auto max-w-6xl px-rockyLg py-rockyMd flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-rocky-textMuted">
-          <p>
+          <p className="flex items-center gap-2">
             © {new Date().getFullYear()} heyrocky. Todos los derechos
             reservados.
           </p>
@@ -176,3 +180,4 @@ export function Layout({ children }: { children: ReactNode }) {
     </div>
   );
 }
+
