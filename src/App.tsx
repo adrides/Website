@@ -6,6 +6,11 @@ import { HowItWorksPage } from "./pages/HowItWorksPage";
 import { FaqPage } from "./pages/FaqPage";
 import { LegalPage } from "./pages/LegalPage";
 import { PrivacyPage } from "./pages/PrivacyPage";
+import { BlogListPage } from "./pages/BlogListPage";
+import { BlogPostPage } from "./pages/BlogPostPage";
+import { ForumCategoriesPage } from "./pages/ForumCategoriesPage";
+import { ForumTopicsPage } from "./pages/ForumTopicsPage";
+import { ForumTopicPage } from "./pages/ForumTopicPage";
 
 function App() {
   return (
@@ -17,6 +22,13 @@ function App() {
         <Route path="/faq" element={<FaqPage />} />
         <Route path="/legal" element={<LegalPage />} />
         <Route path="/privacy" element={<PrivacyPage />} />
+        {/* Blog */}
+        <Route path="/blog" element={<BlogListPage />} />
+        <Route path="/blog/:slug" element={<BlogPostPage />} />
+        {/* Foro */}
+        <Route path="/foro" element={<ForumCategoriesPage />} />
+        <Route path="/foro/c/:slug" element={<ForumTopicsPage />} />
+        <Route path="/foro/t/:slug" element={<ForumTopicPage />} />
         {/* fallback */}
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>

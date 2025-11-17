@@ -78,6 +78,22 @@ export function Layout({ children }: { children: ReactNode }) {
             >
               FAQ
             </NavLink>
+            <NavLink
+              to="/blog"
+              className={({ isActive }) =>
+                `${baseLink} ${isActive ? activeLink : inactiveLink}`
+              }
+            >
+              Blog
+            </NavLink>
+            <NavLink
+              to="/foro"
+              className={({ isActive }) =>
+                `${baseLink} ${isActive ? activeLink : inactiveLink}`
+              }
+            >
+              Foro
+            </NavLink>
           </nav>
 
           <div className="flex items-center gap-3">
@@ -145,6 +161,12 @@ export function Layout({ children }: { children: ReactNode }) {
         </NavLink>
         <NavLink to="/faq" onClick={closeMobileMenu} className={({ isActive }) => `${mobileLinkBase} ${isActive ? mobileActive : mobileInactive}`}>
           FAQ
+        </NavLink>
+        <NavLink to="/blog" onClick={closeMobileMenu} className={({ isActive }) => `${mobileLinkBase} ${isActive ? mobileActive : mobileInactive}`}>
+          Blog
+        </NavLink>
+        <NavLink to="/foro" onClick={closeMobileMenu} className={({ isActive }) => `${mobileLinkBase} ${isActive ? mobileActive : mobileInactive}`}>
+          Foro
         </NavLink>
         <div className="pt-rockyMd">
           <a href="#" className="block w-full text-center px-rockyLg py-rockySm rounded-rockyLg bg-rocky-primary text-white font-semibold shadow-rockyCard hover:opacity-90 transition-opacity">
