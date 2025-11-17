@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import LandingPlanCard from "../components/LandingPlanCard";
 
 export function HomePage() {
   return (
@@ -29,11 +30,11 @@ export function HomePage() {
             Descargar la app
           </a>
           <Link
-          to="/how-it-works"
-          className="inline-flex items-center justify-center px-rockyLg py-rockySm rounded-rockyLg border border-rocky-border bg-rocky-surface text-sm font-semibold text-rocky-primary hover:bg-rocky-card hover:border-rocky-cardShadow"
-        >
-          Ver cómo funciona
-        </Link>
+            to="/how-it-works"
+            className="inline-flex items-center justify-center px-rockyLg py-rockySm rounded-rockyLg border border-rocky-border bg-rocky-surface text-sm font-semibold text-rocky-primary hover:bg-rocky-card hover:border-rocky-cardShadow"
+          >
+            Ver cómo funciona
+          </Link>
         </div>
 
         <p className="text-xs text-rocky-textMuted">
@@ -41,44 +42,9 @@ export function HomePage() {
         </p>
       </div>
 
-      {/* Tarjeta simulando UI de la app */}
+      {/* Nueva tarjeta con formato real */}
       <div className="relative flex justify-center">
-        <div className="w-full max-w-sm rounded-[32px] bg-rocky-navigator border border-rocky-border shadow-rockyCard p-rockyLg">
-          <div className="mb-rockySm flex items-center justify-between">
-            <span className="text-xs font-medium text-rocky-textMuted">
-              Plan destacado cerca de ti
-            </span>
-            <span className="text-[10px] px-2 py-1 rounded-full bg-rocky-card text-rocky-primary">
-              Hoy · 18:30
-            </span>
-          </div>
-
-          <div className="rounded-rockyLg bg-rocky-card border border-rocky-border px-rockyLg py-rockyMd space-y-rockySm">
-            <h3 className="font-semibold text-rocky-primary text-lg">
-              Paseo en grupo por el parque
-            </h3>
-            <p className="text-sm text-rocky-textMuted">
-              5 perros · Parque del Retiro · Ambiente tranquilo
-            </p>
-
-            <div className="flex flex-wrap gap-2">
-              <span className="text-[10px] px-2 py-1 rounded-full bg-rocky-navigator text-rocky-textMuted">
-                Perros sociables
-              </span>
-              <span className="text-[10px] px-2 py-1 rounded-full bg-rocky-navigator text-rocky-textMuted">
-                Tamaño mediano
-              </span>
-              <span className="text-[10px] px-2 py-1 rounded-full bg-rocky-navigator text-rocky-textMuted">
-                Nivel tranquilo
-              </span>
-            </div>
-          </div>
-
-          <p className="mt-rockyMd text-xs text-rocky-textMuted text-center">
-            Así verás los planes desde la app: claros, cuidados y con toda la
-            info que necesitas antes de quedar.
-          </p>
-        </div>
+        <LandingPlanCard />
       </div>
     </section>
   );
