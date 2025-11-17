@@ -24,6 +24,10 @@ export const blogAPI = {
     const resp = await fetch(`${API_BASE}/blog/posts/${postId}/comments${qs(params || {})}`);
     return resp.json();
   },
+  listCategoriesWithCounts: async () => {
+    const resp = await fetch(`${API_BASE}/blog/categories-with-counts`);
+    return resp.json();
+  },
 };
 
 export const forumAPI = {
