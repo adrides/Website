@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export function HomePage() {
   return (
     <section className="grid gap-rockyXl md:grid-cols-2 items-center">
@@ -26,12 +28,12 @@ export function HomePage() {
           >
             Descargar la app
           </a>
-          <a
-            href="how-it-works"
-            className="inline-flex items-center justify-center px-rockyLg py-rockySm rounded-rockyLg border border-rocky-border bg-rocky-surface text-sm font-semibold text-rocky-primary hover:bg-rocky-card hover:border-rocky-cardShadow"
-          >
-            Ver cómo funciona
-          </a>
+          <Link
+          to="/how-it-works"
+          className="inline-flex items-center justify-center px-rockyLg py-rockySm rounded-rockyLg border border-rocky-border bg-rocky-surface text-sm font-semibold text-rocky-primary hover:bg-rocky-card hover:border-rocky-cardShadow"
+        >
+          Ver cómo funciona
+        </Link>
         </div>
 
         <p className="text-xs text-rocky-textMuted">
