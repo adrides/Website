@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import LandingPlanCard from "../components/LandingPlanCard";
 
+
 export function HomePage() {
   return (
     <section className="grid gap-rockyXl md:grid-cols-2 items-center">
