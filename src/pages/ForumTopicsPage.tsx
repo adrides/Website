@@ -47,11 +47,20 @@ export const ForumTopicsPage: React.FC = () => {
       {loading ? (
         <div className="text-sm text-rocky-textMuted">Cargando…</div>
       ) : (
-        <div className="divide-y divide-rocky-border rounded-rockyLg border border-rocky-border bg-white">
-          {topics.map((t) => (
-            <Link key={t.id} to={`/foro/t/${t.slug}`} className="block p-rockyLg hover:bg-rocky-surface">
-              <div className="font-semibold text-rocky-ink">{t.title}</div>
-              <div className="text-xs text-rocky-textMuted mt-1">Última actividad: {new Date(t.lastActivityAt).toLocaleString()}</div>
+        <div className="rounded-rockyLg border border-rocky-border bg-white overflow-hidden">
+          {topics.map((t: any) => (
+            <Link key={t.id} to={`/foro/t/${t.slug}`} className="flex items-center justify-between p-rockyLg hover:bg-rocky-surface border-b border-rocky-border last:border-b-0">
+              <div>
+                <div className="font-semibold text-rocky-ink">{t.title}</div>
+                <div className="flex items-center gap-2 mt-1">
+                  {t.pinned && <span className="inline-flex items-center px-2 py-0.5 rounded-rockySm text-xs border border-rocky-border bg-rocky-surface">Fijado</span>}
+                  {t.status === 'CLOSED' && <span className="inline-flex items-center px-2 py-0.5 rounded-rockySm text-xs border border-rocky-border bg-rocky-surface">Cerrado</span>}
+                  <span className="text-xs text-rocky-textMuted">Última actividad: {new Date(t.lastActivityAt).toLocaleString()}</span>
+                </div>
+              </div>
+              <div className="text-right">
+                <div className="text-sm text-rocky-ink">{Math.max(0,(t.postsCount||0)-1)} respuestas</div>
+              </div>
             </Link>
           ))}
           {topics.length === 0 && (
@@ -64,4 +73,3 @@ export const ForumTopicsPage: React.FC = () => {
 };
 
 export default ForumTopicsPage;
-

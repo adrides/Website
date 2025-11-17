@@ -31,13 +31,25 @@ export const ForumTopicPage: React.FC = () => {
 
   return (
     <div className="space-y-4">
-      <Link to="/foro" className="text-sm text-rocky-primary hover:underline">← Volver al foro</Link>
+      <nav className="text-sm text-rocky-textMuted">
+        <Link to="/foro" className="hover:underline">Foro</Link>
+        <span className="mx-1">›</span>
+        <span className="text-rocky-ink">{topic.title}</span>
+      </nav>
       <h1 className="text-2xl font-bold">{topic.title}</h1>
 
       <div className="space-y-3">
-        {posts.map((p) => (
+        {posts.map((p: any) => (
           <div key={p.id} className="rounded-rockyLg border border-rocky-border bg-white p-rockyLg">
-            <div className="text-sm text-rocky-textMuted mb-1">{new Date(p.createdAt).toLocaleString()}</div>
+            <div className="flex items-center gap-3 mb-2">
+              {p.user?.avatar && (
+                <img src={p.user.avatar} alt={p.user?.name || 'usuario'} className="w-7 h-7 rounded-full object-cover" />
+              )}
+              <div className="text-sm text-rocky-textMuted">
+                {p.user?.name && <span className="text-rocky-ink mr-1">{p.user.name}</span>}
+                <span>{new Date(p.createdAt).toLocaleString()}</span>
+              </div>
+            </div>
             <div className="prose max-w-none"><div dangerouslySetInnerHTML={{ __html: p.content }} /></div>
           </div>
         ))}
@@ -48,4 +60,3 @@ export const ForumTopicPage: React.FC = () => {
 };
 
 export default ForumTopicPage;
-

@@ -36,6 +36,8 @@ export const BlogListPage: React.FC = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [page, activeCategory]);
 
+  const filteredCategories = useMemo(() => (categories || []).filter((c: any) => (c.postsCount || 0) > 0), [categories]);
+
   return (
     <div className="space-y-6">
       <div className="flex items-end justify-between gap-2">
@@ -51,18 +53,19 @@ export const BlogListPage: React.FC = () => {
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
         <aside className="lg:col-span-4 space-y-6">
-          <div className="rounded-rockyLg border border-rocky-border bg-white p-rockyLg">
-            <h3 className="font-semibold mb-3">Categorías</h3>
-            <div className="space-y-2">
-              {categories.map((c)=> (
-                <button key={c.slug} onClick={()=>{ params.set('category', c.slug); setParams(params); setPage(1); }} className={`w-full flex items-center justify-between text-left text-sm px-2 py-1 rounded-rockySm hover:bg-rocky-surface ${activeCategory===c.slug? 'bg-rocky-surface text-rocky-ink':'text-rocky-text'}`}>
-                  <span>{c.name}</span>
-                  <span className="text-rocky-textMuted">{c.postsCount}</span>
-                </button>
-              ))}
-              {categories.length===0 && <div className="text-sm text-rocky-textMuted">Sin categorías</div>}
+          {(filteredCategories.length > 0 && total > 0) && (
+            <div className="rounded-rockyLg border border-rocky-border bg-white p-rockyLg">
+              <h3 className="font-semibold mb-3">Categorías</h3>
+              <div className="space-y-2">
+                {filteredCategories.map((c: any)=> (
+                  <button key={c.slug} onClick={()=>{ params.set('category', c.slug); setParams(params); setPage(1); }} className={`w-full flex items-center justify-between text-left text-sm px-2 py-1 rounded-rockySm hover:bg-rocky-surface ${activeCategory===c.slug? 'bg-rocky-surface text-rocky-ink':'text-rocky-text'}`}>
+                    <span>{c.name}</span>
+                    <span className="text-rocky-textMuted">{c.postsCount}</span>
+                  </button>
+                ))}
+              </div>
             </div>
-          </div>
+          )}
 
           <div className="rounded-rockyLg border border-rocky-border bg-white p-rockyLg">
             <h3 className="font-semibold mb-3">Entradas recientes</h3>
