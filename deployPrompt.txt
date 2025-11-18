@@ -1,6 +1,6 @@
 git init
 git add .
-git commit -m "20251119 Rocky website blog entry"
+git commit -m "20251119 Rocky website forum entry"
 git remote add origin https://github.com/adrides/Website.git
 git remote -v
 git branch -M main
