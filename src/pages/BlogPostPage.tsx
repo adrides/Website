@@ -24,10 +24,7 @@ export const BlogPostPage: React.FC = () => {
     run();
   }, [slug]);
 
-  if (loading) return <div className="text-sm text-rocky-textMuted">Cargando…</div>;
-  if (!post) return <div className="text-sm text-rocky-textMuted">Entrada no encontrada.</div>;
-
-  const primaryCategory = (post.categories && post.categories[0]) ? post.categories[0] : null;
+  // Hooks must not be conditional. Normalize content for all renders.
   const htmlContent = useMemo(() => {
     const c = post?.content;
     if (typeof c === 'string') return c;
@@ -48,6 +45,55 @@ export const BlogPostPage: React.FC = () => {
       return 1;
     }
   }, [htmlContent]);
+
+  // Minimal client-side sanitizer (remove scripts, event handlers, and javascript: URLs)
+  const sanitizeHtml = (html: string): string => {
+    try {
+      const wrapper = document.createElement('div');
+      wrapper.innerHTML = html || '';
+
+      // Remove potentially dangerous nodes
+      wrapper.querySelectorAll('script, iframe, object, embed, link[rel="import"], meta[http-equiv]')
+        .forEach((el) => el.remove());
+
+      // Strip on* attributes and javascript/data URLs
+      const walk = (node: Element) => {
+        // Remove event handlers
+        [...node.attributes].forEach((attr) => {
+          const name = attr.name.toLowerCase();
+          const value = attr.value || '';
+          if (name.startsWith('on')) {
+            node.removeAttribute(attr.name);
+          }
+          if ((name === 'href' || name === 'src') && /^\s*javascript:/i.test(value)) {
+            node.removeAttribute(attr.name);
+          }
+          if ((name === 'src' || name === 'href') && /^\s*data:/i.test(value)) {
+            // Allow only data:image with common formats
+            if (!/^\s*data:image\/(png|jpeg|jpg|webp|gif);/i.test(value)) {
+              node.removeAttribute(attr.name);
+            }
+          }
+        });
+        // Recurse
+        node.childNodes.forEach((child) => {
+          if (child.nodeType === 1) walk(child as Element);
+        });
+      };
+      wrapper.querySelectorAll('*').forEach((el) => walk(el));
+
+      return wrapper.innerHTML;
+    } catch {
+      return '';
+    }
+  };
+
+  const safeHtml = useMemo(() => sanitizeHtml(htmlContent), [htmlContent]);
+
+  if (loading) return <div className="text-sm text-rocky-textMuted">Cargando…</div>;
+  if (!post) return <div className="text-sm text-rocky-textMuted">Entrada no encontrada.</div>;
+
+  const primaryCategory = (post.categories && post.categories[0]) ? post.categories[0] : null;
 
   const shareUrl = typeof window !== 'undefined' ? window.location.href : '';
 
@@ -82,7 +128,7 @@ export const BlogPostPage: React.FC = () => {
         {post.excerpt && <p className="text-rocky-textMuted">{post.excerpt}</p>}
 
         <div className="prose max-w-none">
-          <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
+          <div dangerouslySetInnerHTML={{ __html: safeHtml }} />
         </div>
 
         <div className="flex items-center gap-3 pt-2">
