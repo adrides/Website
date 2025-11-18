@@ -58,7 +58,7 @@ export const BlogListPage: React.FC = () => {
               <h3 className="font-semibold mb-3">Categorías</h3>
               <div className="space-y-2">
                 {filteredCategories.map((c: any)=> (
-                  <button key={c.slug} onClick={()=>{ params.set('category', c.slug); setParams(params); setPage(1); }} className={`w-full flex items-center justify-between text-left text-sm px-2 py-1 rounded-rockySm hover:bg-rocky-surface ${activeCategory===c.slug? 'bg-rocky-surface text-rocky-ink':'text-rocky-text'}`}>
+                  <button key={c.slug} onClick={()=>{ const next = new URLSearchParams(params); next.set('category', c.slug); setParams(next); setPage(1); }} className={`w-full flex items-center justify-between text-left text-sm px-2 py-1 rounded-rockySm hover:bg-rocky-surface ${activeCategory===c.slug? 'bg-rocky-surface text-rocky-ink':'text-rocky-text'}`}>
                     <span>{c.name}</span>
                     <span className="text-rocky-textMuted">{c.postsCount}</span>
                   </button>
