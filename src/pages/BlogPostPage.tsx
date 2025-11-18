@@ -28,11 +28,26 @@ export const BlogPostPage: React.FC = () => {
   if (!post) return <div className="text-sm text-rocky-textMuted">Entrada no encontrada.</div>;
 
   const primaryCategory = (post.categories && post.categories[0]) ? post.categories[0] : null;
+  const htmlContent = useMemo(() => {
+    const c = post?.content;
+    if (typeof c === 'string') return c;
+    if (c && typeof c === 'object') {
+      if (typeof c.html === 'string') return c.html;
+      if (typeof c.content === 'string') return c.content;
+      try { return JSON.stringify(c); } catch { return ''; }
+    }
+    return '';
+  }, [post?.content]);
+
   const readingTime = useMemo(() => {
-    const text = String(post.content || '').replace(/<[^>]+>/g,' ');
-    const words = text.trim().split(/\s+/).filter(Boolean).length;
-    return Math.max(1, Math.round(words / 200));
-  }, [post.content]);
+    try {
+      const plain = htmlContent.replace(/<[^>]+>/g,' ');
+      const words = plain.trim().split(/\s+/).filter(Boolean).length;
+      return Math.max(1, Math.round(words / 200));
+    } catch {
+      return 1;
+    }
+  }, [htmlContent]);
 
   const shareUrl = typeof window !== 'undefined' ? window.location.href : '';
 
@@ -67,7 +82,7 @@ export const BlogPostPage: React.FC = () => {
         {post.excerpt && <p className="text-rocky-textMuted">{post.excerpt}</p>}
 
         <div className="prose max-w-none">
-          <div dangerouslySetInnerHTML={{ __html: post.content }} />
+          <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
         </div>
 
         <div className="flex items-center gap-3 pt-2">
