@@ -100,23 +100,6 @@ export const ForumTopicPage: React.FC = () => {
               className="rounded-rockyLg border border-rocky-border bg-white p-rockyLg"
             >
               <div className="flex items-start gap-rockyMd">
-                {/* Avatar */}
-                <div className="flex-shrink-0">
-                  {p.user?.avatar ? (
-                    <img
-                      src={p.user.avatar}
-                      alt={p.user?.name || 'Usuario'}
-                      className="w-10 h-10 rounded-full object-cover border-2 border-rocky-border"
-                    />
-                  ) : (
-                    <div className="w-10 h-10 rounded-full bg-rocky-primary bg-opacity-10 flex items-center justify-center border-2 border-rocky-border">
-                      <svg className="w-5 h-5 text-rocky-textMuted" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                      </svg>
-                    </div>
-                  )}
-                </div>
-
                 {/* Content */}
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center justify-between mb-2">
