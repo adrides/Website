@@ -2,22 +2,27 @@ const steps = [
   {
     step: "1",
     title: "Crea tu perfil y el de tu perro",
-    text: "Añade información básica como tamaño, edad, nivel de energía y notas importantes para que otros humanos sepan con quién van a quedar.",
+    text: "Añade info clave (tamaño, energía, notas de convivencia) y guarda tus favoritos.",
   },
   {
     step: "2",
-    title: "Explora planes cerca de ti",
-    text: "Filtra por zona, horario, tipo de actividad y requisitos para encontrar planes que encajen con tu perro y contigo.",
+    title: "Explora el mapa",
+    text: "Ve alertas cercanas, rutas con GPX y planes activos. Filtra por tipo, dificultad o estado.",
   },
   {
     step: "3",
-    title: "Únete y chatea con el grupo",
-    text: "Haz preguntas, confirma detalles y asegura que todo el mundo está en la misma página antes de la quedada.",
+    title: "Abre rutas y planes",
+    text: "En rutas ves el punto de inicio y el trazado GPX sobre el mapa. En planes ves requisitos, cupos y quién se une.",
   },
   {
     step: "4",
-    title: "Disfruta del paseo",
-    text: "Queda en el punto de encuentro acordado, conoced al resto de la manada y deja que los perros hagan su magia.",
+    title: "Únete, crea y chatea",
+    text: "Únete a un paseo o crea uno nuevo. Chatea con el grupo y recibe notificaciones de cambios y alertas.",
+  },
+  {
+    step: "5",
+    title: "Comparte y confirma",
+    text: "Sube fotos, marca favoritos, confirma alertas (“sigue ahí” / “ya no está”) y ayuda a la comunidad.",
   },
 ];
 
@@ -26,14 +31,14 @@ export function HowItWorksPage() {
     <section className="space-y-rockyXl">
       <header className="space-y-rockySm max-w-3xl">
         <p className="text-xs font-medium tracking-[0.2em] uppercase text-rocky-textMuted">
-          Cómo funciona
+          Como funciona
         </p>
         <h2 className="text-3xl md:text-4xl font-semibold text-rocky-primary">
-          Diseñado para organizar planes en minutos, no en horas.
+          Todo pasa en un mapa: alertas, rutas con GPX y planes.
         </h2>
         <p className="text-rocky-textMuted text-base">
-          Desde el primer paso hasta el momento de quedar en el parque, Rocky
-          te acompaña con un flujo sencillo y claro.
+          En minutos sabes qué ocurre cerca, qué rutas seguir y a qué paseo unirte.
+          Sin chats dispersos ni info incompleta.
         </p>
       </header>
 
