@@ -8,9 +8,6 @@ import { LegalPage } from "./pages/LegalPage";
 import { PrivacyPage } from "./pages/PrivacyPage";
 import { BlogListPage } from "./pages/BlogListPage";
 import { BlogPostPage } from "./pages/BlogPostPage";
-import { ForumCategoriesPage } from "./pages/ForumCategoriesPage";
-import { ForumTopicsPage } from "./pages/ForumTopicsPage";
-import { ForumTopicPage } from "./pages/ForumTopicPage";
 
 function App() {
   return (
@@ -25,10 +22,6 @@ function App() {
         {/* Blog */}
         <Route path="/blog" element={<BlogListPage />} />
         <Route path="/blog/:slug" element={<BlogPostPage />} />
-        {/* Foro */}
-        <Route path="/foro" element={<ForumCategoriesPage />} />
-        <Route path="/foro/c/:slug" element={<ForumTopicsPage />} />
-        <Route path="/foro/t/:slug" element={<ForumTopicPage />} />
         {/* fallback */}
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>

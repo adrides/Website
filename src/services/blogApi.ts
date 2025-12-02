@@ -1,4 +1,4 @@
-/* Minimal client for Blog & Forum public endpoints */
+/* Minimal client for Blog public endpoints */
 
 const API_BASE = import.meta.env.VITE_API_URL || "https://rocky-dog-collab-api.fly.dev/api";
 
@@ -26,29 +26,6 @@ export const blogAPI = {
   },
   listCategoriesWithCounts: async () => {
     const resp = await fetch(`${API_BASE}/blog/categories-with-counts`);
-    return resp.json();
-  },
-};
-
-export const forumAPI = {
-  listCategories: async () => {
-    const resp = await fetch(`${API_BASE}/forum/categories`);
-    return resp.json();
-  },
-  listCategoriesWithCounts: async () => {
-    const resp = await fetch(`${API_BASE}/forum/categories-with-counts`);
-    return resp.json();
-  },
-  listTopics: async (params?: { categoryId?: string; search?: string; page?: number; limit?: number; sort?: string }) => {
-    const resp = await fetch(`${API_BASE}/forum/topics${qs(params || {})}`);
-    return resp.json();
-  },
-  getTopic: async (slug: string) => {
-    const resp = await fetch(`${API_BASE}/forum/topics/${slug}`);
-    return resp.json();
-  },
-  listPosts: async (topicId: string, params?: { page?: number; limit?: number }) => {
-    const resp = await fetch(`${API_BASE}/forum/topics/${topicId}/posts${qs(params || {})}`);
     return resp.json();
   },
 };

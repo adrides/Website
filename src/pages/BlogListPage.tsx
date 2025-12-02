@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
-import { blogAPI } from "../services/blogForumApi";
+import { blogAPI } from "../services/blogApi";
 
 export const BlogListPage: React.FC = () => {
   const [posts, setPosts] = useState<any[]>([]);

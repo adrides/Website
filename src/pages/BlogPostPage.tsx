@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { useParams, Link } from "react-router-dom";
-import { blogAPI } from "../services/blogForumApi";
+import { blogAPI } from "../services/blogApi";
 
 export const BlogPostPage: React.FC = () => {
   const { slug } = useParams();
