@@ -7,12 +7,12 @@ const steps = [
   {
     step: "2",
     title: "Explora el mapa",
-    text: "Ve alertas cercanas, rutas con GPX y planes activos. Filtra por tipo, dificultad o estado.",
+    text: "Ve alertas cercanas, rutas trazadas y planes activos. Filtra por tipo, dificultad o estado.",
   },
   {
     step: "3",
     title: "Abre rutas y planes",
-    text: "En rutas ves el punto de inicio y el trazado GPX sobre el mapa. En planes ves requisitos, cupos y quién se une.",
+    text: "En rutas ves el punto de inicio y el trazado del recorrido. En planes ves requisitos, cupos y quién se une.",
   },
   {
     step: "4",
@@ -34,7 +34,7 @@ export function HowItWorksPage() {
           Como funciona
         </p>
         <h2 className="text-3xl md:text-4xl font-semibold text-rocky-primary">
-          Todo pasa en un mapa: alertas, rutas con GPX y planes.
+          Todo pasa en un mapa: alertas, rutas y planes.
         </h2>
         <p className="text-rocky-textMuted text-base">
           En minutos sabes qué ocurre cerca, qué rutas seguir y a qué paseo unirte.

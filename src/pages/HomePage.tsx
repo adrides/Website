@@ -10,11 +10,11 @@ export function HomePage() {
         <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-rocky-primary leading-tight">
           Paseos seguros,
           <br />
-          rutas con GPX y comunidad perruna.
+          rutas y comunidad perruna.
         </h1>
 
         <p className="text-rocky-textMuted text-lg max-w-xl">
-          Rocky te muestra alertas cercanas, rutas con trazado y planes para unirte o crear.
+          Rocky te muestra alertas cercanas, rutas detalladas y planes para unirte o crear.
           Chatea, guarda favoritos, comparte fotos y mantente al dia con notificaciones.
         </p>
 
@@ -35,7 +35,7 @@ export function HomePage() {
 
         <div className="flex flex-wrap gap-2 text-xs text-rocky-textMuted">
           <span className="px-3 py-1 rounded-full bg-rocky-card">Alertas en mapa</span>
-          <span className="px-3 py-1 rounded-full bg-rocky-card">Rutas con GPX</span>
+          <span className="px-3 py-1 rounded-full bg-rocky-card">Rutas detalladas</span>
           <span className="px-3 py-1 rounded-full bg-rocky-card">Chat y comunidad</span>
           <span className="px-3 py-1 rounded-full bg-rocky-card">Fotos y favoritos</span>
         </div>
@@ -53,13 +53,13 @@ export function HomePage() {
               Ruta destacada cerca de ti
             </span>
             <span className="text-[10px] px-2 py-1 rounded-full bg-rocky-card text-rocky-primary">
-              GPX incluido
+              Verificada
             </span>
           </div>
 
           <div className="rounded-rockyLg bg-rocky-card border border-rocky-border px-rockyLg py-rockyMd space-y-rockySm">
             <h3 className="font-semibold text-rocky-primary text-lg">
-              Paseo por Madrid Rio con GPX
+              Paseo por Madrid Rio
             </h3>
             <p className="text-sm text-rocky-textMuted">
               6 km · 90 min · Terreno mixto · Punto de inicio marcado
@@ -67,13 +67,13 @@ export function HomePage() {
 
             <div className="flex flex-wrap gap-2">
               <span className="text-[10px] px-2 py-1 rounded-full bg-rocky-navigator text-rocky-textMuted">
-                Ver track en mapa
-              </span>
-              <span className="text-[10px] px-2 py-1 rounded-full bg-rocky-navigator text-rocky-textMuted">
-                Descarga GPX
+                Ver recorrido
               </span>
               <span className="text-[10px] px-2 py-1 rounded-full bg-rocky-navigator text-rocky-textMuted">
                 Alertas cercanas
+              </span>
+              <span className="text-[10px] px-2 py-1 rounded-full bg-rocky-navigator text-rocky-textMuted">
+                Fotos
               </span>
             </div>
           </div>

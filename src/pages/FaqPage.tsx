@@ -9,11 +9,11 @@ const faqs = [
   },
   {
     q: "¿Cómo veo las rutas en el mapa?",
-    a: "Toca el pin de ruta: verás el punto de inicio y el GPX pintado en el mapa, con distancia y duración.",
+    a: "Toca el pin de ruta: verás el punto de inicio y el recorrido trazado en el mapa, con distancia y duración.",
   },
   {
-    q: "¿Puedo subir fotos y GPX?",
-    a: "Sí, las rutas admiten varias fotos y archivo GPX. En planes puedes compartir fotos con el grupo.",
+    q: "¿Puedo subir fotos de rutas?",
+    a: "Sí, las rutas admiten varias fotos. En planes puedes compartir fotos con el grupo.",
   },
   {
     q: "¿Qué pasa con las alertas?",

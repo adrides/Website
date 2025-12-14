@@ -12,21 +12,21 @@ module.exports = {
       },
       colors: {
         rocky: {
-          // Paleta principal (de theme.ts)
-          primary: "#6B4E3D",
+          // Paleta principal (exacta de DogCollabAppNew theme.ts)
+          primary: "#d5b693", // Marrón cálido (principal)
           primaryDark: "#5A3F31",
           primaryLight: "#8A6B57",
           primaryLightExtra: "#dabd9a",
           grayBackground: "#f1f2f1",
 
-          secondary: "#A7CDEB", // azul pastel
-          accent: "#D8C4A0", // beige arena
+          secondary: "#A7CDEB", // Azul cielo pastel
+          accent: "#D8C4A0", // Beige arena
 
           // Fondos
-          background: "#faf4e8",
+          background: "#ffffff", // Blanco
           navigator: "#faf9f5",
           surface: "#FFFFFF",
-          card: "#ffe7bf",
+          card: "#fff0d7", // Crema sutil para tarjetas
           cardShadow: "#d9bea0",
           buttonBg: "#d9bea0",
 
@@ -35,6 +35,7 @@ module.exports = {
           textMuted: "#6B6B6B",
           textLight: "#FFFFFF",
           textDisabled: "#B7B7B7",
+          textAccent: "#6B4E3D",
 
           // Estados
           success: "#66BB6A",
@@ -45,6 +46,14 @@ module.exports = {
           // Bordes
           border: "#EFE7DB",
           borderLight: "#F4EFE7",
+
+          // Tonos naturales adicionales
+          sage: "#EDE4D6",
+          forest: "#6B4E3D",
+          moss: "#8A6B57",
+          cream: "#FAF9F5",
+          sand: "#E9DDC9",
+          bark: "#5D4037",
         },
       },
 
